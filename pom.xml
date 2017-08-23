@@ -115,6 +115,30 @@ THE POSSIBILITY OF SUCH DAMAGE.
                     </execution>
                 </executions>
             </plugin>
+
+            <!--exec-maven-plugin-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <!--<phase>package</phase>-->
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <!--<executable>run.bat</executable>-->
+                            <!--<executable>java -jar target/jcstress.jar</executable>-->
+                            <executable>java</executable>
+                            <arguments>
+                                <argument>-jar</argument>
+                                <argument>target/jcstress.jar</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
